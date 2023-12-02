@@ -1,0 +1,33 @@
+
+package main
+
+import (
+ "fmt"
+ "goProjects/home/animals"
+ "goProjects/home/family"
+ "goProjects/home/furniture"
+ "goProjects/home/rooms"
+)
+
+type DreamHouse struct {
+ TotalArea float32
+ Kitchen   rooms.Kitchen
+ MasterBed rooms.Bedroom
+ LivingRoom rooms.Hall
+ Bath      rooms.Bath
+ Fam       family.Family
+ Pets      animals.Animals
+}
+
+func main() {
+ dreamHome := DreamHouse{
+  Kitchen:    rooms.Kitchen{Furniture: furniture.SetupKitchen(), Area: rooms.EstablishRoom("Kitchen")},
+  MasterBed:  rooms.Bedroom{Area: rooms.EstablishRoom("Master Bedroom"), Furniture: furniture.SetupMasterBedroom()},
+  LivingRoom: rooms.Hall{Area: rooms.EstablishRoom("Living Room"), Furniture: furniture.SetupLivingRoom()},
+  Bath:       rooms.Bath{Area: rooms.EstablishRoom("Bathroom"), Furniture: furniture.SetupBathroom()},
+  Fam:        family.InitFamily(),
+  Pets:       animals.InitAnimals(),
+ }
+
+ fmt.Println("\n\n\n\n", dreamHome)
+}
