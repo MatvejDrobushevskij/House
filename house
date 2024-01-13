@@ -11,20 +11,20 @@ import (
 
 type DreamHouse struct {
  TotalArea float32
- Kitchen   rooms.Kitchen
- MasterBed rooms.Bedroom
- LivingRoom rooms.Hall
- Bath      rooms.Bath
- Fam       family.Family
- Pets      animals.Animals
+ Kitchen   kitchenFurniture.go
+ MasterBed bedroomFurniture.go
+ LivingRoom hallFurniture.go
+ Bath      bathroomFurniture
+ Fam       family
+ Pets      Animals
 }
 
 func main() {
  dreamHome := DreamHouse{
-  Kitchen:    rooms.Kitchen{Furniture: furniture.SetupKitchen(), Area: rooms.EstablishRoom("Kitchen")},
-  MasterBed:  rooms.Bedroom{Area: rooms.EstablishRoom("Master Bedroom"), Furniture: furniture.SetupMasterBedroom()},
-  LivingRoom: rooms.Hall{Area: rooms.EstablishRoom("Living Room"), Furniture: furniture.SetupLivingRoom()},
-  Bath:       rooms.Bath{Area: rooms.EstablishRoom("Bathroom"), Furniture: furniture.SetupBathroom()},
+  Kitchen:    kitchenFurniture.go{Furniture: furniture.SetupKitchen(), Area: rooms.EstablishRoom("Kitchen")},
+  MasterBed:  bedroomFurniture{Area: rooms.EstablishRoom("Master Bedroom"), Furniture: furniture.SetupMasterBedroom()},
+  LivingRoom: hallFurniture.go{Area: rooms.EstablishRoom("Living Room"), Furniture: furniture.SetupLivingRoom()},
+  Bath:       bathroomFurniture{Area: rooms.EstablishRoom("Bathroom"), Furniture: furniture.SetupBathroom()},
   Fam:        family.InitFamily(),
   Pets:       animals.InitAnimals(),
  }
